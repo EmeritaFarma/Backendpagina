@@ -32,6 +32,9 @@ app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static("uploads"));
+app.get("/api/test", (req, res) => {
+  res.json({ message: "✅ Backend funcionando correctamente" });
+});
 
 app.use('/api/v1/category', routerCategory);
 app.use('/api/v1/rol', routerRole);
