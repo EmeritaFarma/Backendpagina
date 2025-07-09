@@ -1,0 +1,38 @@
+"use strict";
+// back-farmacia/routes/index.ts
+Object.defineProperty(exports, "__esModule", { value: true });
+const express_1 = require("express");
+const banner_routes_1 = require("./banner.routes");
+const branch_routes_1 = require("./branch.routes");
+const category_routes_1 = require("./category.routes");
+const location_routes_1 = require("./location.routes");
+const product_routes_1 = require("./product.routes");
+const role_routes_1 = require("./role.routes");
+const schedule_routes_1 = require("./schedule.routes");
+const section_routes_1 = require("./section.routes");
+const tag_routes_1 = require("./tag.routes");
+const user_routes_1 = require("./user.routes");
+const router = (0, express_1.Router)();
+// Asociar rutas
+router.use("/banners", banner_routes_1.routerBanner);
+router.use("/branches", branch_routes_1.routerBranch);
+router.use("/categories", category_routes_1.routerCategory);
+router.use("/locations", location_routes_1.routerLocation);
+router.use("/products", product_routes_1.routerProduct);
+router.use("/roles", role_routes_1.routerRole);
+router.use("/schedules", schedule_routes_1.routerSchedule);
+router.use("/sections", section_routes_1.routerSection);
+router.use("/tags", tag_routes_1.routerTag);
+router.use("/users", user_routes_1.routerUser);
+console.log("✅ Rutas cargadas:");
+console.log("/api/v1/category");
+console.log("/api/v1/rol");
+console.log("/api/v1/user");
+console.log("/api/v1/branch");
+console.log("/api/v1/location");
+console.log("/api/v1/schedule");
+console.log("/api/v1/banner");
+console.log("/api/v1/tag");
+console.log("/api/v1/product");
+console.log("🔥 Servidor listo. Esperando peticiones...");
+exports.default = router;

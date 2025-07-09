@@ -1,0 +1,17 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.routerProduct = void 0;
+const express_1 = require("express");
+const product_controller_1 = require("../controllers/product.controller");
+const helper_1 = require("../util/helper");
+exports.routerProduct = (0, express_1.Router)();
+exports.routerProduct.get('/', product_controller_1.getAllProducts);
+exports.routerProduct.get('/:id', product_controller_1.getProductById);
+exports.routerProduct.post('/', helper_1.upload.single('image'), product_controller_1.createProduct);
+exports.routerProduct.put('/:id', helper_1.upload.single('image'), product_controller_1.updateProduct);
+exports.routerProduct.delete('/:id', product_controller_1.deleteProduct);
+exports.routerProduct.get('/branch/:id', product_controller_1.getProductsByBranch);
+exports.routerProduct.get('/branch/item/:id', product_controller_1.getProductsBranchById);
+exports.routerProduct.post('/branch/', product_controller_1.addProductByBranch);
+exports.routerProduct.put('/branch/:id', product_controller_1.updateProductByBranch);
+exports.routerProduct.delete('/branch/:id', product_controller_1.removeProductByBranch);
