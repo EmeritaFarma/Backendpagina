@@ -28,23 +28,23 @@ if (!fs.existsSync(dir)) {
   fs.mkdirSync(dir);
 }
 
-app.use(cors());
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(express.static("uploads"));
+app.get(cors());
+app.get(express.json());
+app.get(express.urlencoded({ extended: true }));
+app.get(express.static("uploads"));
 app.get("/api/test", (req, res) => {
   res.json({ message: "✅ Backend funcionando correctamente" });
 });
 
-app.use('/api/v1/category', routerCategory);
-app.use('/api/v1/rol', routerRole);
-app.use('/api/v1/user', routerUser);
-app.use('/api/v1/branch', routerBranch);
-app.use('/api/v1/location', routerLocation);
-app.use('/api/v1/schedule', routerSchedule);
-app.use('/api/v1/banner', routerBanner);
-app.use('/api/v1/tag', routerTag);
-app.use('/api/v1/product', routerProduct);
+app.get('/api/v1/category', routerCategory);
+app.get('/api/v1/rol', routerRole);
+app.get('/api/v1/user', routerUser);
+app.get('/api/v1/branch', routerBranch);
+app.get('/api/v1/location', routerLocation);
+app.get('/api/v1/schedule', routerSchedule);
+app.get('/api/v1/banner', routerBanner);
+app.get('/api/v1/tag', routerTag);
+app.get('/api/v1/product', routerProduct);
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });
