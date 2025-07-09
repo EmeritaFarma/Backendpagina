@@ -45,6 +45,15 @@ app.use('/api/v1/schedule', routerSchedule);
 app.use('/api/v1/banner', routerBanner);
 app.use('/api/v1/tag', routerTag);
 app.use('/api/v1/product', routerProduct);
-app.listen(PORT, () => {
-  console.log(`Server is running on port ${PORT}`);
-});
+db.initialize()
+    .then(() => {
+        console.log("Database is connected");
+        app.listen(PORT, () => {
+            console.log(`Server is running on port ${PORT}`);
+        });
+    })
+    .catch((err) => {
+        console.error("❌ Error connecting to database", err);
+        process.exit(1); // detiene si hay error
+    });
+
