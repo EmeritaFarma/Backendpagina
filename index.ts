@@ -44,7 +44,7 @@ app.use('/api/v1/location', routerLocation);
 app.use('/api/v1/schedule', routerSchedule);
 app.use('/api/v1/banner', routerBanner);
 app.use('/api/v1/tag', routerTag);
-app.get('/api/v1/product', routerProduct);
+app.use('/api/v1/product', routerProduct);
 app.listen(PORT, () => {
   console.log(`Server is running on port ${PORT}`);
 });

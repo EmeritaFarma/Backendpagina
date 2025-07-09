@@ -25,5 +25,16 @@ router.use("/schedules", routerSchedule);
 router.use("/sections", routerSection);
 router.use("/tags", routerTag);
 router.use("/users", routerUser);
+console.log("✅ Rutas cargadas:");
+console.log("/api/v1/category");
+console.log("/api/v1/rol");
+console.log("/api/v1/user");
+console.log("/api/v1/branch");
+console.log("/api/v1/location");
+console.log("/api/v1/schedule");
+console.log("/api/v1/banner");
+console.log("/api/v1/tag");
+console.log("/api/v1/product");
+console.log("🔥 Servidor listo. Esperando peticiones...");
 
 export default router;
